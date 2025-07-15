@@ -23,9 +23,9 @@
 #include <string.h>
 #include <unistd.h>
 
-#include "lib/my_demo.h"
 #include "lvgl/demos/lv_demos.h"
 #include "lvgl/lvgl.h"
+#include "my_demo.h"
 #include "src/lib/driver_backends.h"
 #include "src/lib/simulator_settings.h"
 #include "src/lib/simulator_util.h"

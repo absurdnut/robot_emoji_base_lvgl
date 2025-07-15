@@ -159,6 +159,10 @@ endif()
 file(GLOB LV_LINUX_SRC src/lib/*.c)
 set(LV_LINUX_INC src/lib)
 
+## 我的自定义库和源文件
+file(GLOB_RECURSE MY_LIB_SRC robot_emoji_base_lvgl/*.c)  # 递归添加所有第三方库.c文件
+set(MY_LIB_INC robot_emoji_base_lvgl)                    # 添加第三方库头文件路径
+
 target_include_directories(lvgl PUBLIC ${PKG_CONFIG_INC})
 
 add_library(lvgl_linux STATIC ${LV_LINUX_SRC} ${LV_LINUX_BACKEND_SRC})
@@ -168,12 +172,13 @@ add_library(lvgl_linux STATIC ${LV_LINUX_SRC} ${LV_LINUX_BACKEND_SRC})
 set_target_properties(lvgl_linux PROPERTIES COMPILE_DEFINITIONS "${LVGL_COMPILER_DEFINES}")
 target_include_directories(lvgl_linux PUBLIC
     ${LV_LINUX_INC} ${CMAKE_CURRENT_SOURCE_DIR}
-    ${PROJECT_SOURCE_DIR}/src/lib ${LVGL_CONF_INC_DIR})
+    ${PROJECT_SOURCE_DIR}/src/lib ${LVGL_CONF_INC_DIR}
+    ${MY_LIB_INC})
 
 # Link LVGL with external dependencies - Modern CMake/CMP0079 allows this
 target_link_libraries(lvgl PUBLIC ${PKG_CONFIG_LIB} m pthread)
 
-add_executable(lvglsim src/main.c ${LV_LINUX_SRC} ${LV_LINUX_BACKEND_SRC})
+add_executable(lvglsim src/main.c ${LV_LINUX_SRC} ${LV_LINUX_BACKEND_SRC} ${MY_LIB_SRC}) # 生成可执行文件
 target_link_libraries(lvglsim lvgl_linux lvgl)
 
 # Install the lvgl_linux library and its headers

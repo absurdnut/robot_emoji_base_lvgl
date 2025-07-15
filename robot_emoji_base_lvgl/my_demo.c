@@ -1,18 +1,5 @@
 #include "my_demo.h"
 
-typedef struct {
-  lv_obj_t* eye_L;
-  lv_obj_t* eye_R;
-  lv_obj_t* mouth;
-} face;
-
-typedef enum {
-  emotion_default,
-  emotion_happy,
-  emotion_sad,
-  emotion_angry,
-} EmotionState;
-
 EmotionState state = emotion_default;
 
 void lv_example_style_demo(void) {
