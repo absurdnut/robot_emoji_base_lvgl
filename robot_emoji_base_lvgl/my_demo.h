@@ -19,7 +19,7 @@ typedef struct {
   lv_obj_t* eye_L;
   lv_obj_t* eye_R;
   lv_obj_t* mouth;
-} face;
+} robot_emoji_t;
 
 typedef enum {
   emotion_default,
@@ -27,5 +27,3 @@ typedef enum {
   emotion_sad,
   emotion_angry,
 } EmotionState;
-
-void lv_example_anim_1(void);
