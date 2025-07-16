@@ -15,3 +15,32 @@ void lv_example_style_demo(void) {
   lv_obj_set_style_radius(eye_2, 20, 0);
   lv_obj_set_pos(eye_2, 150, 60);
 }
+
+robot_emoji_t* robot_emoji_init(robot_emoji_t* emoji, lv_obj_t* parent) {
+  emoji->face = lv_obj_create(parent);
+
+  emoji.eye_L->eyesocket =
+      lv_obj_create(emoji->face);  // set the place of eye_L
+  emoji->eye_L->eyeball = lv_obj_create(emoji->eye_L->eyesocket);
+  // emoji->eye_L->eyebrow = lv_obj_create(emoji->eye_L->eyesocket);
+
+  emoji.eye_R.eyesocket = lv_obj_create(emoji->face);  // set the place of eye_R
+  emoji->eye_R->eyeball = lv_obj_create(emoji->eye_R->eyesocket);
+  // emoji->eye_R->eyebrow = lv_obj_create(emoji->eye_L->eyesocket);
+
+  emoji.mouth_->mouthsocket =
+      lv_obj_create(emoji->face);  // set the place of mouth
+  emoji->mouth_->mouth = lv_obj_create(emoji->mouth_->mouthsocket);
+
+  emoji.eye_L->eyeball = lv_obj_create(lv_screen_active());
+  lv_obj_set_size(emoji->eye_L->eyeball, 40, 60);
+  lv_obj_set_style_radius(emoji->eye_L->eyeball, 20, 0);
+  lv_obj_set_pos(emoji->eye_L->eyeball, 50, 60);
+
+  emoji.eye_R->eyeball = lv_obj_create(lv_screen_active());
+  lv_obj_set_size(emoji->eye_R->eyeball, 40, 60);
+  lv_obj_set_style_radius(emoji->eye_R->eyeball, 20, 0);
+  lv_obj_set_pos(emoji->eye_R->eyeball, 150, 60);
+
+  return emoji;
+}
