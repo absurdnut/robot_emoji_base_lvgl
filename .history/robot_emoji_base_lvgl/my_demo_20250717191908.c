@@ -12,7 +12,7 @@ lv_obj_t* create_transparent_container(lv_obj_t* parent, lv_coord_t w,
 }
 
 void convert_transparent_container(lv_obj_t* cont) {  // 转换透明容器
-  lv_obj_remove_style(cont, );
+  lv_obj_remove_style_all(cont);
   lv_obj_clear_flag(cont, LV_OBJ_FLAG_CLICKABLE);
 }
 

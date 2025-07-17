@@ -12,7 +12,7 @@ lv_obj_t* create_transparent_container(lv_obj_t* parent, lv_coord_t w,
 }
 
 void convert_transparent_container(lv_obj_t* cont) {  // 转换透明容器
-  lv_obj_remove_style(cont, );
+  lv_obj_remove_style_all(cont);
   lv_obj_clear_flag(cont, LV_OBJ_FLAG_CLICKABLE);
 }
 
@@ -32,29 +32,23 @@ void lv_example_style_demo(void) {
 
 void robot_emoji_init(robot_emoji_t* emoji, lv_obj_t* parent) {
   emoji->face = lv_obj_create(parent);
-  lv_obj_set_size(emoji->face, 240, 240);
   convert_transparent_container(emoji->face);
 
   emoji->eye_L.eyesocket =
       lv_obj_create(emoji->face);  // set the place of eye_L
-  lv_obj_set_size(emoji->eye_L.eyesocket, 100, 100);
-  lv_obj_set_pos(emoji->eye_L.eyesocket, 40, 40);
-  // convert_transparent_container(emoji->eye_L.eyesocket);
+  convert_transparent_container(emoji->eye_L.eyesocket);
+  // emoji->eye_L.eyeball = lv_obj_create(emoji->eye_L.eyesocket);
+  // emoji->eye_L->eyebrow = lv_obj_create(emoji->eye_L->eyesocket);
 
-  emoji->eye_L.eyeball = lv_obj_create(emoji->eye_L.eyesocket);
-  lv_obj_set_size(emoji->eye_L.eyeball, 40, 60);
-  lv_obj_set_style_radius(emoji->eye_L.eyeball, 20, 0);
-  // emoji->eye_L.eyebrow = lv_obj_create(emoji->eye_L.eyesocket);
-
-  // emoji->eye_R.eyesocket =
-  //     lv_obj_create(emoji->face);  // set the place of eye_R
-  // convert_transparent_container(emoji->eye_R.eyesocket);
+  emoji->eye_R.eyesocket =
+      lv_obj_create(emoji->face);  // set the place of eye_R
+  convert_transparent_container(emoji->eye_R.eyesocket);
   // emoji->eye_R.eyeball = lv_obj_create(emoji->eye_R.eyesocket);
   // emoji->eye_R->eyebrow = lv_obj_create(emoji->eye_L->eyesocket);
 
-  // emoji->mouth_.mouthsocket =
-  //     lv_obj_create(emoji->face);  // set the place of mouth
-  // convert_transparent_container(emoji->mouth_.mouthsocket);
+  emoji->mouth_.mouthsocket =
+      lv_obj_create(emoji->face);  // set the place of mouth
+  convert_transparent_container(emoji->mouth_.mouthsocket);
   // emoji->mouth_.mouth = lv_obj_create(emoji->mouth_.mouthsocket);
 
   // lv_obj_set_size(emoji->eye_L.eyeball, 40, 60);

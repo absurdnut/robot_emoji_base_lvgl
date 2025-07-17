@@ -142,9 +142,10 @@ int main(int argc, char **argv) {
 #endif
 
   /*Create a Demo*/
+  lv_obj_set_style_bg_color(lv_screen_active(), lv_color_hex(0x000000), 0);
 
-  robot_emoji_t *emoji_test = NULL;
-  emoji_test = robot_emoji_init(emoji_test, lv_screen_active());
+  robot_emoji_t emoji_test;
+  robot_emoji_init(&emoji_test, lv_screen_active());
 
   /* Enter the run loop of the selected backend */
   driver_backends_run_loop();

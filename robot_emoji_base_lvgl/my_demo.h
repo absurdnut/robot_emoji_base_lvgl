@@ -41,4 +41,4 @@ typedef enum {  // 表情状态的枚举变量
   emotion_angry,
 } EmotionState;
 
-robot_emoji_t* robot_emoji_init(robot_emoji_t*, lv_obj_t*);
+void robot_emoji_init(robot_emoji_t*, lv_obj_t*);
