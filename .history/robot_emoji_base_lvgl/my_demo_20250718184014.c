@@ -13,8 +13,7 @@ lv_obj_t* create_transparent_container(lv_obj_t* parent, lv_coord_t w,
 
 void convert_transparent_container(lv_obj_t* cont) {  // 转换透明容器
   lv_obj_set_style_bg_opa(cont, LV_OPA_TRANSP, 0);
-  lv_obj_set_style_border_opa(cont, LV_OPA_TRANSP, 0);  // 透明
-  // lv_obj_set_style_border_opa(cont, LV_OPA_COVER, 0);   // 不透明
+  lv_obj_set_style_border_opa(cont, LV_OPA_COVER, 0);
   lv_obj_set_style_pad_all(cont, 0, 0);
   lv_obj_clear_flag(cont, LV_OBJ_FLAG_CLICKABLE);  // 消除点击
 }
@@ -61,7 +60,6 @@ void robot_emoji_init(robot_emoji_t* emoji, lv_obj_t* parent) {  //
   emoji->mouth_.mouthsocket =
       lv_obj_create(emoji->face);  // set the place of mouth
   lv_obj_set_size(emoji->mouth_.mouthsocket, border_width, border_height / 3);
-  lv_obj_align(emoji->mouth_.mouthsocket, LV_ALIGN_BOTTOM_MID, 0, 0);
 
   convert_transparent_container(emoji->mouth_.mouthsocket);
 
