@@ -1,13 +1,13 @@
 /**
- * @file lv_conf.h
+ * @file lv_conf_cmsis.h
  * Configuration file for v9.3.0
  */
 
 /* clang-format off */
 #if 1 /* Set this to "1" to enable content */
 
-#ifndef LV_CONF_H
-#define LV_CONF_H
+#ifndef LV_CONF_CMSIS_H
+#define LV_CONF_CMSIS_H
 
 #if defined(_RTE_)
 #include "RTE_Components.h"
@@ -595,8 +595,6 @@
 /* Demonstrate special features */
 #define LV_FONT_MONTSERRAT_28_COMPRESSED    0  /**< bpp = 3 */
 #define LV_FONT_DEJAVU_16_PERSIAN_HEBREW    0  /**< Hebrew, Arabic, Persian letters and all their forms */
-#define LV_FONT_SIMSUN_14_CJK               0  /**< 1000 most common CJK radicals */
-#define LV_FONT_SIMSUN_16_CJK               0  /**< 1000 most common CJK radicals */
 #define LV_FONT_SOURCE_HAN_SANS_SC_14_CJK   0  /**< 1338 most common CJK radicals */
 #define LV_FONT_SOURCE_HAN_SANS_SC_16_CJK   0  /**< 1338 most common CJK radicals */
 
@@ -1243,7 +1241,7 @@
         #define LV_DEMO_MUSIC_LARGE     0
         #define LV_DEMO_MUSIC_AUTO_PLAY 0
     #endif
-    
+
     #if LV_USE_DEMO_BENCHMARK
         /** Use fonts where bitmaps are aligned 16 byte and has Nx16 byte stride */
         #define LV_DEMO_BENCHMARK_ALIGNED_FONTS 0
@@ -1257,6 +1255,6 @@
 
 /*--END OF LV_CONF_H--*/
 
-#endif /*LV_CONF_H*/
+#endif /*LV_CONF_CMSIS_H*/
 
 #endif /*End of "Content enable"*/
