@@ -1,6 +1,6 @@
 #include "my_demo.h"
 
-EmotionState state = EMOTION_DEFAULT;
+EmotionState state = emotion_default;
 
 lv_obj_t* create_transparent_container(lv_obj_t* parent, lv_coord_t w,
                                        lv_coord_t h) {

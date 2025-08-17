@@ -35,10 +35,10 @@ typedef struct {
 } robot_emoji_t;
 
 typedef enum {  // 表情状态的枚举变量
-  EMOTION_DEFAULT,
-  EMOTION_HAPPY,
-  EMOTION_SAD,
-  EMOTION_ANGRY,
+  emotion_default,
+  emotion_happy,
+  emotion_sad,
+  emotion_angry,
 } EmotionState;
 
 void robot_emoji_init(robot_emoji_t*, lv_obj_t*);
